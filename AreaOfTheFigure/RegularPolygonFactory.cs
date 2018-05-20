@@ -8,16 +8,12 @@ namespace AreaOfTheFigure
 {
     public class RegularPolygonFactory
     {
-        public RegularPolygon GetRegularPolygon(int polygonType, int sideLength)
+        public RegularPolygon GetRegularPolygon(int polygonType, double sideLength)
         {
 
-            if (polygonType < 3)
+            if (sideLength < 1)
             {
-                throw new ArgumentException("Polygon must have more then 2 sides");
-            }
-            if (sideLength <= 0)
-            {
-                throw new ArgumentException("Length must be positive number!");
+                throw new ArgumentException("Arguments are not correct! Length of side must be > 0!");
             }
 
             if (polygonType == 3)
@@ -32,7 +28,11 @@ namespace AreaOfTheFigure
             {
                 return new NSidedRegularPolygon(sideLength, polygonType);
             }
-            return null;
+            else
+            {
+                throw new ArgumentException("Arguments are not correct! Polygon must have more then 2 sides!");
+            }
+            
 
         }
     }
