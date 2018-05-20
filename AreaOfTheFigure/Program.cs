@@ -18,7 +18,8 @@ namespace AreaOfTheFigure
                 RegularPolygon a = null;
                 double area = 0;
                 Point[] coordinates = null;
-                string[] text = null;
+                
+                List<string> tekst = new List<string>();
                 int choose = 0;
 
                 try
@@ -26,6 +27,7 @@ namespace AreaOfTheFigure
                     numberofsides = int.Parse(args[0]);
 
                     sidelength = double.Parse(args[1]);
+                    Console.WriteLine(sidelength);
                 }
                 catch(Exception e)
                 {
@@ -51,15 +53,15 @@ namespace AreaOfTheFigure
 
                 area = a.GetArea();
                 coordinates = a.GetCoordinates();
-                text = new string[coordinates.Length+1];
+              
 
-
-
-                for (int i = 0; i < coordinates.Length; i++)
+                foreach(Point point in coordinates)
                 {
-                    text[i] = coordinates[i].ToString();
+                    tekst.Add(point.ToString());
                 }
-                text[coordinates.Length] = "area = " + area.ToString();
+
+               
+                tekst.Add("area = " + area.ToString());
 
 
                 if (args.Length == 3)
@@ -80,7 +82,7 @@ namespace AreaOfTheFigure
                         using (System.IO.StreamWriter file =
                             new System.IO.StreamWriter(@"C:\Users\Oskar Przybylski\Documents\visual studio 2017\Projects\AreaOfTheFigure\AreaOfTheFigure/test.txt"))
                         {
-                            foreach (string line in text)
+                            foreach (string line in tekst)
                             {
 
 
@@ -92,9 +94,9 @@ namespace AreaOfTheFigure
                 }
                 else
                 {
-                    for (int i = 0; i < coordinates.Length + 1; i++)
+                    foreach (string line in tekst)
                     {
-                        Console.WriteLine(text[i]);
+                        Console.WriteLine(line);
                     }
                     Console.ReadKey();
                 }
