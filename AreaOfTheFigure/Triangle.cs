@@ -9,8 +9,7 @@ namespace AreaOfTheFigure
 {
     public class Triangle : RegularPolygon
     {
-        //private double sideLength { get; set; }
-       // private int numberOfTheSides=3;
+        private const float STEP = 120;
        
         public Triangle(double _sideLength)
         {
@@ -21,17 +20,15 @@ namespace AreaOfTheFigure
 
         public override Point[] GetCoordinates()
         {
-            float radius = 3 / (2 * ((float)Math.Sin(Math.PI / 3)));
+            float radius = numberOfSides / (2 * ((float)Math.Sin(Math.PI / numberOfSides)));
             Point center = new Point { x = -radius, y = 0 };
-            
-
             List<Point> points = new List<Point>();
-            float step = 360.0f / 3;
+           
 
-            //starting angle
-            for (float i = 0; i < 360.0; i += step) //go in a full circle
+            
+            for (float i = 0; i < 360.0; i += STEP) 
             {
-                points.Add(DegreesToXY(i, radius, center)); //code snippet from above
+                points.Add(DegreesToXY(i, radius, center)); 
 
             }
 

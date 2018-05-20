@@ -8,6 +8,7 @@ namespace AreaOfTheFigure
 {
     public class Square : RegularPolygon
     {
+        private const float STEP = 90;
         public Square(double _sideLength)
         {
 
@@ -19,18 +20,15 @@ namespace AreaOfTheFigure
         
         public override Point[] GetCoordinates()
         {
-            float radius = 4 / (2 * ((float)Math.Sin(Math.PI / 4)));
+            float radius = numberOfSides / (2 * ((float)Math.Sin(Math.PI / numberOfSides)));
             Point center = new Point { x = -radius, y = 0 };
-            if (4 < 3)
-                throw new ArgumentException("Polygon must have 3 sides or more.");
-
             List<Point> points = new List<Point>();
-            float step = 360.0f / 4;
+            
 
-            //starting angle
-            for (float i = 0; i < 360.0; i += step) //go in a full circle
+            
+            for (float i = 0; i < FULL_ANGLE; i += STEP) 
             {
-                points.Add(DegreesToXY(i, radius, center)); //code snippet from above
+                points.Add(DegreesToXY(i, radius, center)); 
 
             }
 

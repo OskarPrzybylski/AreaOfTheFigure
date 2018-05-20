@@ -8,8 +8,9 @@ namespace AreaOfTheFigure
 {
     public abstract class RegularPolygon : IArea
     {
-         protected double sideLength;
+        protected double sideLength;
         protected int numberOfSides;
+        protected const float FULL_ANGLE = 360;
         public double GetArea()
         {
             double a = (numberOfSides / 4.0) * (1.0 / (Math.Tan(Math.PI / numberOfSides))) * sideLength * sideLength;
