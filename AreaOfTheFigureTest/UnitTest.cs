@@ -39,14 +39,14 @@ namespace AreaOfTheFigureTest
         }
 
         [TestMethod]
-        public void CoordinatesTest()
+        public void CoordinatesCalculationsTest()
         {
 
             RegularPolygonFactory factory = new RegularPolygonFactory();
 
             RegularPolygon a = factory.GetRegularPolygon(3, 2);
             
-
+            
             Point[] d = a.GetCoordinates();
             
 
@@ -76,6 +76,17 @@ namespace AreaOfTheFigureTest
             Assert.IsInstanceOfType(a, typeof(Triangle));
             Assert.IsInstanceOfType(b, typeof(Square));
             Assert.IsInstanceOfType(c, typeof(NSidedRegularPolygon));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void SideLengthLessThen0()
+        {
+            RegularPolygonFactory factory = new RegularPolygonFactory();
+
+
+            RegularPolygon a = factory.GetRegularPolygon(3, -10);
+
+            
         }
     }
 }

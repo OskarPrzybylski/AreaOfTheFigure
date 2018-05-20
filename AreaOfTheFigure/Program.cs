@@ -69,6 +69,26 @@ namespace AreaOfTheFigure
                     try
                     {
                         choice = int.Parse(args[2]);
+                        if (choice == 1)
+                        {
+
+
+
+                            using (System.IO.StreamWriter file =
+                                new System.IO.StreamWriter("test.txt"))
+                            {
+                                foreach (string line in tekst)
+                                {
+
+
+                                    file.WriteLine(line);
+
+                                }
+                            }
+                            
+
+
+                        }
                     }
                     catch(Exception e)
                     {
@@ -76,21 +96,7 @@ namespace AreaOfTheFigure
                         Console.ReadKey();
                         return 1;
                     }
-                    if (choice == 1)
-                    {
-
-                        using (System.IO.StreamWriter file =
-                            new System.IO.StreamWriter("test.txt"))
-                        {
-                            foreach (string line in tekst)
-                            {
-
-
-                                file.WriteLine(line);
-
-                            }
-                        }
-                    }
+                   
                 }
                 else
                 {
