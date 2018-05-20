@@ -20,7 +20,7 @@ namespace AreaOfTheFigure
 
         public override Point[] GetCoordinates()
         {
-            float radius = numberOfSides / (2 * ((float)Math.Sin(Math.PI / numberOfSides)));
+            float radius = (float)sideLength / (2 * ((float)Math.Sin(Math.PI / numberOfSides)));
             Point center = new Point { x = -radius, y = 0 };
             List<Point> points = new List<Point>();
            

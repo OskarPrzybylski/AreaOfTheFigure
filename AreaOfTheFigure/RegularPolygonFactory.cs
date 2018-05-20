@@ -11,7 +11,7 @@ namespace AreaOfTheFigure
         public RegularPolygon GetRegularPolygon(int polygonType, double sideLength)
         {
 
-            if (sideLength < 1)
+            if (sideLength <= 0)
             {
                 throw new ArgumentException("Arguments are not correct! Length of side must be > 0!");
             }

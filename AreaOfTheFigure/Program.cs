@@ -12,22 +12,22 @@ namespace AreaOfTheFigure
         {
             if (args.Length>1 && args.Length<4)
             {
-                int numberofsides = 0;
-                double sidelength = 0;
+                int numberOfSides = 0;
+                double sideLength = 0;
                 RegularPolygonFactory factory = new RegularPolygonFactory();
                 RegularPolygon a = null;
                 double area = 0;
                 Point[] coordinates = null;
                 
                 List<string> tekst = new List<string>();
-                int choose = 0;
+                int choice = 0;
 
                 try
                 {
-                    numberofsides = int.Parse(args[0]);
+                    numberOfSides = int.Parse(args[0]);
 
-                    sidelength = double.Parse(args[1]);
-                    Console.WriteLine(sidelength);
+                    sideLength = double.Parse(args[1]);
+                    
                 }
                 catch(Exception e)
                 {
@@ -41,7 +41,7 @@ namespace AreaOfTheFigure
 
                 try
                 {
-                    a = factory.GetRegularPolygon(numberofsides, sidelength);
+                    a = factory.GetRegularPolygon(numberOfSides, sideLength);
                 }
                 catch(ArgumentException e)
                 {
@@ -68,7 +68,7 @@ namespace AreaOfTheFigure
                 {
                     try
                     {
-                        choose = int.Parse(args[2]);
+                        choice = int.Parse(args[2]);
                     }
                     catch(Exception e)
                     {
@@ -76,7 +76,7 @@ namespace AreaOfTheFigure
                         Console.ReadKey();
                         return 1;
                     }
-                    if (choose == 1)
+                    if (choice == 1)
                     {
 
                         using (System.IO.StreamWriter file =
@@ -103,7 +103,7 @@ namespace AreaOfTheFigure
             }
             else
             {
-                Console.WriteLine("Error! Must be 2 or 3 arguments!(numberofsides,sidelength,typeofwriting)");
+                Console.WriteLine("Error! Must be 2 or 3 arguments!(numberofsides,sidelength,typeofwriting(type 1 if you want to write to file))");
                 Console.ReadKey();
                 return 1;
             }

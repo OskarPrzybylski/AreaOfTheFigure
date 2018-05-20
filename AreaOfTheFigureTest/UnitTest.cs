@@ -50,7 +50,7 @@ namespace AreaOfTheFigureTest
             Point[] d = a.GetCoordinates();
             
 
-            Point[] g = { new Point { x = 0, y = 0 }, new Point { x =(float)-2.598076, y =(float) -1.5 }, new Point { x=(float) -2.598076, y=(float)1.5 } };
+            Point[] g = { new Point { x = 0, y = 0 }, new Point { x =(float)-1.732051, y =(float)-0.9999999 }, new Point { x=(float)-1.732051, y=(float)0.9999999 } };
 
             for(int i = 0; i < d.Length; i++)
             {
