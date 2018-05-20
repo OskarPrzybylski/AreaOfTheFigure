@@ -25,11 +25,13 @@ namespace AreaOfTheFigure
 
             List<Point> points = new List<Point>();
             float step = FULL_ANGLE / numberOfSides;
-
+            
          
-            for (float i = 0; i < FULL_ANGLE; i += step) 
+            for (float i = 0; i < numberOfSides; i ++) 
             {
-                points.Add(DegreesToXY(i, radius, center)); 
+
+                points.Add(DegreesToXY(i, radius, center));
+                step += step;
 
             }
 
