@@ -44,14 +44,19 @@ namespace AreaOfTheFigureTest
 
             RegularPolygonFactory factory = new RegularPolygonFactory();
 
-            RegularPolygon a = factory.GetRegularPolygon(3, 10);
-            RegularPolygon b = factory.GetRegularPolygon(4, 10);
-            RegularPolygon c = factory.GetRegularPolygon(5, 10);
+            RegularPolygon a = factory.GetRegularPolygon(3, 2);
+            
 
             Point[] d = a.GetCoordinates();
-            Point[] e = b.GetCoordinates();
-            Point[] f = c.GetCoordinates();
+            
 
+            Point[] g = { new Point { x = 0, y = 0 }, new Point { x =(float)-2.598076, y =(float) -1.5 }, new Point { x=(float) -2.598076, y=(float)1.5 } };
+
+            for(int i = 0; i < d.Length; i++)
+            {
+                Assert.AreEqual(Math.Round(d[i].x,2), Math.Round(g[i].x,2));
+                Assert.AreEqual(Math.Round(d[i].y, 2), Math.Round(g[i].y, 2));
+            }
            
 
            
