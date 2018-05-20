@@ -80,7 +80,7 @@ namespace AreaOfTheFigure
                     {
 
                         using (System.IO.StreamWriter file =
-                            new System.IO.StreamWriter(@"C:\Users\Oskar Przybylski\Documents\visual studio 2017\Projects\AreaOfTheFigure\AreaOfTheFigure/test.txt"))
+                            new System.IO.StreamWriter("test.txt"))
                         {
                             foreach (string line in tekst)
                             {
